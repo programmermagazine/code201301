@@ -1,10 +1,11 @@
 #ifndef _OBJ_READER_H_
 #define _OBJ_READER_H_
 
-#pragma once
-#include "reader.h"
-#include <iostream>;
-#include <cstdlib>;
+//#pragma once
+#include "Reader.h"
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
 using namespace std;
 
 class objReader : public Reader
