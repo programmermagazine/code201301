@@ -1,8 +1,8 @@
 #ifndef _TYPEDEF_H_
 #define _TYPEDEF_H_
-#pragma once
-#include <Windows.h>
-//#include <GL/glut.h>
+//#pragma once
+//#include <Windows.h>
+#include <GL/glut.h>
 
 
 #pragma pack(push)  //push packª¬ºA

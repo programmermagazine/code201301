@@ -23,5 +23,5 @@ int main (){
 	test.dumpInfo();
 
 
-	system("PAUSE");
+	//system("PAUSE");
 }

@@ -1,12 +1,13 @@
 #include "glModel.h"
-#include <windows.h>
+//#include <windows.h>
 
 
 glModel::glModel(void)
 {
 	m_pReaderFactory = new ReaderFactory();
 //	m_pReader=m_pReaderFactory->GetReaderPtr("obj");
-	m_pReader=nullptr;
+	//m_pReader=nullptr;
+    m_pReader = NULL;
 	modelHead=new MODELHEAD();
 	modelData=new MODELDATA();
 
@@ -21,7 +22,8 @@ glModel::~glModel(void)
 
 void glModel::LoadModel(char* filename)
 {
-	if(m_pReader==nullptr){		
+	//if(m_pReader==nullptr){		
+	if(m_pReader==NULL){		
 		cout<<"[Warning]: YOU MUST SET READER TYPE FIRST !!!"<<endl;	
 	}else{
 		m_pReader->CheckFile(filename);		
@@ -50,7 +52,7 @@ void glModel::dumpInfo(void)
 	cout<<"=========================================="<<endl;	
 
 
-#if _DEBUG_DUMP_VERTICES
+#ifdef _DEBUG_DUMP_VERTICES
 
 	for(int i=0;i<this->modelHead->numVertices;i++){
 		cout<<"v["<<i<<"]=\t"<<this->modelData->ModelVertices[i].x<<"\t"
@@ -59,7 +61,7 @@ void glModel::dumpInfo(void)
 
 	}
 #endif
-#if _DEBUG_DUMP_MESH
+#ifdef _DEBUG_DUMP_MESH
 
 	for(int i=0;i<this->modelHead->numMeshes;i++){
 		cout<<"F["<<i<<"]:"<<this->modelData->ModelMesh[i].numVerticesEachMesh<<" | ";
